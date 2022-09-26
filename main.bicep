@@ -15,8 +15,8 @@ param serviceDeployment string
 param serviceLocation string
 
 // Variables
-@description('Split on space, take the first array, and concatonate with the first character of the second array to create a prefix string')
-var serviceLocationPrefix = '${string(first(split(serviceLocation, ' ')))}-${first(string(indexOf(split(serviceLocation, ' '), 1)))}'
+@description('Split on space, take the first array, and concatonate with the first character of the last array to create a prefix string')
+var serviceLocationPrefix = '${string(first(split(serviceLocation, ' ')))}${first(string(last(split(serviceLocation, ' '))))}'
 
 // Resources
 resource group 'Microsoft.Resources/resourceGroups@2021-04-01' = {
