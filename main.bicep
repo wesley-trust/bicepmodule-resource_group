@@ -23,3 +23,10 @@ resource group 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: '${serviceName}-${serviceEnvironment}-${serviceLocationPrefix}-${serviceDeployment}'
   location: serviceLocation
 }
+
+// Outputs
+@description('Name of the resource group')
+output name string = group.name
+
+@description('Location of the resource group')
+output location string = group.location
