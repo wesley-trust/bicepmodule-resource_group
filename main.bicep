@@ -20,7 +20,7 @@ var serviceLocationPrefix = '${string(first(split(serviceLocation, ' ')))}${firs
 
 // Resources
 resource group 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: '${serviceName}-${serviceEnvironment}-${serviceLocationPrefix}-${serviceDeployment}'
+  name: '${serviceName}-${serviceEnvironment}-${serviceLocationPrefix}-${serviceDeployment}-rg'
   location: serviceLocation
 }
 
